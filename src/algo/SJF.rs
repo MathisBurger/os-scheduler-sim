@@ -1,6 +1,7 @@
 use crate::algo::general::{all_jobs_done, get_average_waiting, sort_by_spawn_time};
 use crate::task::Task;
 
+/// Uses the FCFS algo
 pub fn SJF(tasks: &mut [Task]) -> u64 {
     sort_by_spawn_time(tasks);
     let mut time_run: u64 = tasks[0].spawn_time as u64;

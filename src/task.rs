@@ -3,13 +3,22 @@ use std::time::Duration;
 use rand::Rng;
 
 #[derive(Copy, Clone)]
+/// Simple task struct that is used for the tests
 pub struct Task {
+
+    /// Duration of the task
     pub duration: u32,
+
+    /// The time the task spawns at
     pub spawn_time: u32,
+
+    /// A counter that is increasing while waiting for calculation
     pub waiting: u64
 }
 
 impl Task {
+
+    /// Creates a new task
     pub fn new() -> Self {
         let mut rng = rand::thread_rng();
         Task {

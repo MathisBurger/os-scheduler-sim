@@ -1,6 +1,7 @@
 use crate::algo::general::{all_jobs_done, get_average_waiting, sort_by_spawn_time};
 use crate::task::Task;
 
+/// Uses the FCFS algo
 pub fn FCFS(tasks: &mut [Task]) -> u64 {
     let mut time_run: u64 = 0;
     sort_by_spawn_time(tasks);
@@ -27,6 +28,7 @@ pub fn FCFS(tasks: &mut [Task]) -> u64 {
     get_average_waiting(tasks)
 }
 
+/// Gets the index of the next job for execution
 fn get_next_job_index(arr: &mut [Task]) -> i32 {
     for x in 0..arr.len() {
         if arr[x].duration > 0 {
