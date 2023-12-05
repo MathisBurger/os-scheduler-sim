@@ -22,7 +22,6 @@ pub fn PSJF(tasks: &mut [Task]) -> u64 {
             let spawned_index = spawned_process as usize;
             let duration_left = time_run + duration as u64 - tasks[spawned_index].spawn_time as u64;
             tasks[index].duration = duration_left as u32;
-            // calculate time run
             duration = (time_run + duration as u64 - duration_left) as u32;
         }
         time_run += duration as u64;
