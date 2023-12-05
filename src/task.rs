@@ -1,6 +1,8 @@
 use std::fmt::{Display, Formatter};
 use std::time::Duration;
 use rand::Rng;
+
+#[derive(Copy, Clone)]
 pub struct Task {
     pub duration: u32,
     pub spawn_time: u32,

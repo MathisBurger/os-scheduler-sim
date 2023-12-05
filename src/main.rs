@@ -6,7 +6,11 @@ mod task;
 mod algo;
 
 fn main() {
-    let mut tasks_vec = generate_tasks(3);
-    let mut tasks = tasks_vec.as_mut_slice();
-    println!("FCFS: {}", algo::FCFS::FCFS(tasks));
+    let mut tasks: [Task; 999] = [Task::new();999];
+    generate_tasks(&mut tasks);
+    let mut fcfs = tasks.clone();
+    let mut sjf = tasks.clone();
+
+    println!("FCFS: {}", algo::FCFS::FCFS(&mut fcfs));
+    println!("SJF: {}", algo::SJF::SJF(&mut sjf));
 }
