@@ -37,3 +37,17 @@ pub(crate) fn get_average_waiting(arr: &mut [Task]) -> u64 {
     }
     return count / (arr.len() as u64);
 }
+
+/// get shortest job index for sjf functions
+pub(crate) fn sjf_get_shortest_job_index(arr: &mut [Task], time_run: u64) -> i32 {
+
+    let mut shortest_index: i32 = -1;
+    let mut shortest_duration = arr[0].duration;
+    for x in 0..arr.len() {
+        if arr[x].spawn_time <= (time_run as u32) && arr[x].duration <= shortest_duration && arr[x].duration != 0 {
+            shortest_duration = arr[x].duration;
+            shortest_index = x as i32;
+        }
+    }
+    shortest_index
+}

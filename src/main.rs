@@ -10,7 +10,9 @@ fn main() {
     generate_tasks(&mut tasks);
     let mut fcfs = tasks.clone();
     let mut sjf = tasks.clone();
+    let mut psjf = tasks.clone();
 
     println!("FCFS: {}", algo::FCFS::FCFS(&mut fcfs));
     println!("SJF: {}", algo::SJF::SJF(&mut sjf));
+    println!("PSJF: {}", algo::PSJF::PSJF(&mut psjf));
 }
